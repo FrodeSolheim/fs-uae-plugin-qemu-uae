@@ -34,7 +34,7 @@ dist:
 	rm $(name)-$(version)/qemu-uae/.gitmodules
 
 	tar Jcf $(name)-$(version).tar.xz $(name)-$(version)
-	rm -Rf $(name)-$(version)
+	# rm -Rf $(name)-$(version)
 
 clean:
 	make -C qemu-uae clean

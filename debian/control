@@ -8,7 +8,6 @@ Homepage: http://fengestad.no/fs-uae-plugin-qemu-uae
 
 Package: fs-uae-plugin-qemu-uae
 Architecture: any
-Multi-Arch: foreign
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}, fs-uae
 Description: QEMU-UAE plugin for FS-UAE.
  Provides PPC emulation and Slirp network support.
