@@ -2,3 +2,4 @@
 /debian/fs-uae-plugin-qemu-uae/
 /debian/fs-uae-plugin-qemu-uae.debhelper.log
 /debian/fs-uae-plugin-qemu-uae.substvars
+/fs-uae-plugin-qemu-uae-*
