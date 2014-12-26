@@ -1,5 +1,5 @@
-fs-uae-plugin-qemu-uae (3.6.0qemu2.2.0-0) unstable; urgency=low
+fs-uae-plugin-qemu-uae (3.6.0.1qemu2.2.0-0) unstable; urgency=low
 
   * Dummy changelog entry.
 
- -- Frode Solheim <frode@fs-uae.net>  Fri, 26 Dec 2014 18:24:46 +0100
+ -- Frode Solheim <fs-uae@fengestad.no>  Fri, 26 Dec 2014 18:24:46 +0100

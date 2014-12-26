@@ -1,4 +1,4 @@
-version = $(strip $(shell cat qemu-uae/VERSION.FS))
+version = $(strip $(shell cat VERSION))
 name = fs-uae-plugin-qemu-uae
 
 DESTDIR =
@@ -14,7 +14,7 @@ install: all
 	install -D qemu-uae/qemu-uae.so \
 	$(DESTDIR)$(prefix)/lib/fs-uae/plugins/qemu-uae/$(version)/qemu-uae.so
 
-dist:
+distdir:
 	rm -Rf $(name)-$(version)
 	mkdir $(name)-$(version)
 	cp Makefile $(name)-$(version)
@@ -44,9 +44,18 @@ dist:
 	rm -Rf $(name)-$(version)/qemu-uae/.git
 	rm $(name)-$(version)/qemu-uae/.gitmodules
 
+dist: distdir
 	tar Jcf $(name)-$(version).tar.xz $(name)-$(version)
 	# rm -Rf $(name)-$(version)
 
+deb_version = 0
+deb_series = unstable
+
+source-deb: distdir
+	test -f $(name)_$(version).orig.tar.xz || tar -cJ --strip-components=1 -f $(name)_$(version).orig.tar.xz $(name)-$(version)
+	sed -i "s/$(version)-0) unstable/$(version)-$(deb_version)$(deb_series)) $(deb_series)/g" $(name)-$(version)/debian/changelog
+	cd $(name)-$(version) && dpkg-buildpackage -S -us -uc
+
 clean:
-	cd qemu-uae && ./configure
-	make -C qemu-uae clean
+	# cd qemu-uae && ./configure
+	# make -C qemu-uae clean
