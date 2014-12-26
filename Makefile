@@ -48,4 +48,5 @@ dist:
 	# rm -Rf $(name)-$(version)
 
 clean:
+	cd qemu-uae && ./configure
 	make -C qemu-uae clean
