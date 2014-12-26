@@ -1,0 +1,14 @@
+Source: fs-uae-plugin-qemu-uae
+Section: otherosfs
+Priority: extra
+Maintainer: Frode Solheim <frode@fs-uae.net>
+Build-Depends: debhelper (>= 9), libglib2.0-dev, zlib1g-dev
+Standards-Version: 3.9.4
+Homepage: http://fengestad.no/fs-uae-plugin-qemu-uae
+
+Package: fs-uae-plugin-qemu-uae
+Architecture: any
+Multi-Arch: foreign
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: QEMU-UAE plugin for FS-UAE.
+ Provides PPC emulation and Slirp network support.

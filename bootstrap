@@ -1,0 +1,7 @@
+#!/bin/sh -e
+
+git submodule update --init qemu-uae
+
+cd qemu-uae
+./bootstrap
+cd ..
