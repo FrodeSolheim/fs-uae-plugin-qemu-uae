@@ -1,0 +1,3 @@
+[submodule "qemu-uae"]
+	path = qemu-uae
+	url = https://github.com/FrodeSolheim/qemu-uae.git
