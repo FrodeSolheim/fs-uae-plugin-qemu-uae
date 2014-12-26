@@ -1,7 +1,18 @@
 version = $(strip $(shell cat qemu-uae/VERSION.FS))
 name = fs-uae-plugin-qemu-uae
 
+DESTDIR =
+prefix = /usr/local
+
 all:
+	cd qemu-uae && ./configure
+	make -C qemu-uae
+
+install: all
+	install -D -m 0644 plugin.ini \
+	$(DESTDIR)$(prefix)/lib/fs-uae/plugins/qemu-uae/plugin.ini
+	install -D qemu-uae/qemu-uae.so \
+	$(DESTDIR)$(prefix)/lib/fs-uae/plugins/qemu-uae/$(version)/qemu-uae.so
 
 dist:
 	rm -Rf $(name)-$(version)
