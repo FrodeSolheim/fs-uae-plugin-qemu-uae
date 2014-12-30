@@ -46,7 +46,7 @@ distdir:
 
 dist: distdir
 	tar Jcf $(name)-$(version).tar.xz $(name)-$(version)
-	# rm -Rf $(name)-$(version)
+	rm -Rf $(name)-$(version)
 
 deb_version = 0
 deb_series = unstable
