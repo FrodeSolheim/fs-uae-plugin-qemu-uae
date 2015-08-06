@@ -19,6 +19,8 @@ distdir:
 	mkdir $(name)-$(version)
 	cp Makefile $(name)-$(version)
 	cp plugin.ini $(name)-$(version)
+	cp README.md $(name)-$(version)
+	cp VERSION $(name)-$(version)
 
 	mkdir $(name)-$(version)/debian
 	cp debian/fs-uae-plugin-qemu-uae.install $(name)-$(version)/debian
@@ -33,16 +35,16 @@ distdir:
 	cp -a fs-uae $(name)-$(version)
 
 	cp -a qemu-uae $(name)-$(version)
-	rm $(name)-$(version)/qemu-uae/dtc/tests/.gitignore
-	rm $(name)-$(version)/qemu-uae/dtc/.gitignore
+	rm -f $(name)-$(version)/qemu-uae/dtc/tests/.gitignore
+	rm -f $(name)-$(version)/qemu-uae/dtc/.gitignore
 	rm -Rf $(name)-$(version)/qemu-uae/dtc/.git
-	rm $(name)-$(version)/qemu-uae/tests/.gitignore
-	rm $(name)-$(version)/qemu-uae/tests/qemu-iotests/.gitignore
-	rm $(name)-$(version)/qemu-uae/.gitignore
-	rm $(name)-$(version)/qemu-uae/pixman/.gitignore
+	rm -f $(name)-$(version)/qemu-uae/tests/.gitignore
+	rm -f $(name)-$(version)/qemu-uae/tests/qemu-iotests/.gitignore
+	rm -f $(name)-$(version)/qemu-uae/.gitignore
+	rm -f $(name)-$(version)/qemu-uae/pixman/.gitignore
 	rm -Rf $(name)-$(version)/qemu-uae/pixman/.git
 	rm -Rf $(name)-$(version)/qemu-uae/.git
-	rm $(name)-$(version)/qemu-uae/.gitmodules
+	rm -f $(name)-$(version)/qemu-uae/.gitmodules
 
 dist: distdir
 	tar Jcf $(name)-$(version).tar.xz $(name)-$(version)

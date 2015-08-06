@@ -1,2 +1,2 @@
 plugin.ini usr/lib/fs-uae/plugins/qemu-uae
-qemu-uae/qemu-uae.so usr/lib/fs-uae/plugins/qemu-uae/3.6.0qemu2.2.0
+qemu-uae/qemu-uae.so usr/lib/fs-uae/plugins/qemu-uae/3.6.0qemu2.2.0fs1
